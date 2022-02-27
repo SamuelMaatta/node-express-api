@@ -68,7 +68,7 @@ router.delete('/:id', passport.authenticate('jwt', {session: false}), (req, res)
         res.sendStatus(202);
     }
 })
-/*
+
 router.post('/upload', upload.single('image'), function (req, res, next) {
     console.log(req.file);
     console.log(req.body);
@@ -90,7 +90,7 @@ router.post('/upload', upload.single('image'), function (req, res, next) {
 
     res.sendStatus(200);
 })
-*/
+/*
 router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
     console.log(req.body);
 
@@ -111,23 +111,9 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 
     res.sendStatus(201);
 })
-
+*/
 router.put('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
     let foundPosting = postings.find(t => t.id === req.params.id);
-
-/*    if(foundPosting) {
-        foundPosting.title = req.body.title;
-        foundPosting.category = req.body.category;
-        foundPosting.location = req.body.location;
-        foundPosting.images = req.body.images;
-        foundPosting.askingPrice = req.body.askingPrice;
-        foundPosting.deliveryType = req.body.deliveryType;
-        foundPosting.sellerName = req.body.sellerName;
-        foundPosting.sellerContactInfo = req.body.sellerContactInfo;
-        res.sendStatus(202);
-    } else {
-        req.sendStatus(404);
-    } */
 
     if(foundPosting === -1) {
         res.sendStatus(404);
