@@ -5,8 +5,7 @@ const bcrypt = require('bcryptjs')
 const bodyParser = require('body-parser')
 const postings = require('./routes/postings')
 const app = express()
-// portti pitää muuttaa herokuun
-const port = 3000
+//const port = 3000
 const { v4: uuidv4 } = require('uuid')
 
 app.use(bodyParser.json());
@@ -109,10 +108,7 @@ app.get('/jwtSecured', passport.authenticate('jwt', {session: false}), (req, res
     res.json({ status: "OK, toimii" , user: req.user.id })
 })
 
-// portti ympäristömuuttujasta herokusta
-/*
 app.set('port', (process.env.PORT || 80));
-*/
 
 /*
 app.post('/upload', upload.single('image'), function (req, res, next) {
